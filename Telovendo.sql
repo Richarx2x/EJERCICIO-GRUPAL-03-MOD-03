@@ -212,5 +212,80 @@ VALUES ('47921', 'Smartphone Galaxy S23 Ultra 512GB/12GB 5G Misty Lilac', 'CELUL
 INSERT INTO producto (SKU, nombre, categoria, productor, cantidad_en_stock, Precio) 
 VALUES ('43014', 'Smartphone Redmi 9C 32GB/2GB Gris Wom', 'CELULARES', 'Xiaomi', '18', '84990');
 
+-- EJERCICIO GRUPAL 03 - MODULO 03
+
+-- A) 5 VENDORES NUEVOS MAURICIO
+
+-- B) 5 CLIENTES NUEVOS ARACILY
+
+-- C) 5 PRODUCTOS NUEVOS RICARDO 
+INSERT INTO producto (SKU, nombre, categoria, productor, cantidad_en_stock, Precio) 
+VALUES 	('39568', 'Silla Gamer Wanku V2 Black/Red', 'Sillas Gamer', 'Gear Gamer', '25', '79990'),
+		('39567', 'Silla Gamer Omilen V2 Black/Blue', 'Sillas Gamer', 'Gear Gamer', '10', '116990'),
+		('39574', 'Silla Gamer Beigman V2 Black/Orange', 'Sillas Gamer', 'Gear Gamer', '5', '142990'),
+		('37644', 'Silla Gamer ROG Chariot Core', 'Sillas Gamer', 'Asus', '12', '345990'),
+		('37645', 'Silla Gamer ROG Chariot (RGB)', 'Sillas Gamer', 'Asus', '4', '404990');
+        
+-- Productos nuevos (pendientes del ejercicio 02) Alvaro:
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-001', 'Auriculares Inalámbricos Sony WH-1000XM4', 'Auriculares', 'Sony', 50);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-002', 'Auriculares Inalámbricos Bose QuietComfort 35 II', 'Auriculares', 'Bose', 25);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-003', 'Auriculares Inalámbricos Jabra Elite 85h', 'Auriculares', 'Jabra', 30);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-004', 'Auriculares Inalámbricos Sennheiser Momentum 3', 'Auriculares', 'Sennheiser', 20);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-005', 'Auriculares Inalámbricos Apple AirPods Pro', 'Auriculares', 'Apple', 40);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-006', 'Auriculares Inalámbricos Samsung Galaxy Buds Pro', 'Auriculares', 'Samsung', 35);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-007', 'Auriculares con Cable Audio-Technica ATH-M50x', 'Auriculares', 'Audio-Technica', 15);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-008', 'Auriculares con Cable Beyerdynamic DT 990 Pro', 'Auriculares', 'Beyerdynamic', 10);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-009', 'Auriculares con Cable AKG K371', 'Auriculares', 'AKG', 20);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-010', 'Auriculares con Cable Shure SRH840', 'Auriculares', 'Shure', 18);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-011', 'Auriculares Inalámbricos JBL Quantum 800', 'Auriculares', 'JBL', 30);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-012', 'Auriculares Inalámbricos Anker Soundcore Life Q35', 'Auriculares', 'Anker', 25);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-013', 'Auriculares Inalámbricos Huawei FreeBuds 4i', 'Auriculares', 'Huawei', 40);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-014', 'Auriculares Inalámbricos Razer Hammerhead True Wireless Pro', 'Auriculares', 'Razer', 20);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-015', 'Auriculares Inalámbricos JLab JBuds Air Sport', 'Auriculares', 'JLab', 15);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-016', 'Auriculares con Cable Grado Labs SR80e', 'Auriculares', 'Grado Labs', 10);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-017', 'Auriculares con Cable Philips SHP9500', 'Auriculares', 'Philips', 20);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-018', 'Auriculares con Cable Beyerdynamic DT 770 Pro', 'Auriculares', 'Beyerdynamic', 30);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-019', 'Auriculares con Cable Audio-Technica ATH-AD700X', 'Auriculares', 'Audio-Technica', 12);
+INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
+VALUES ('P-020', 'Auriculares con Cable Sennheiser HD 600', 'Auriculares', 'Sennheiser', 18);
+
+-- I) ACTUALIZAMOS DATOS DE 3 PRODUCTOS:
+UPDATE Producto
+SET nombre = 
+    CASE 
+        WHEN SKU = '14853' THEN 'MOUSE ROJO DIABLITO'
+        WHEN SKU = '20906' THEN 'MOUSE AZUL BALLENA'
+        WHEN SKU = '21504' THEN 'MOUSE NARANJO SOL'
+        ELSE nombre
+    END,
+    productor = 'Gatitos',
+    precio = 
+    CASE 
+        WHEN SKU = '14853' THEN 4000
+        WHEN SKU = '20906' THEN 3000
+        WHEN SKU = '21504' THEN 3500
+        ELSE precio
+    END
+WHERE SKU IN ('14853', '20906', '21504');
+
 -- Evaluamos tabla
-SELECT * FROM producto;
+-- SELECT * FROM producto;
