@@ -212,5 +212,32 @@ VALUES ('47921', 'Smartphone Galaxy S23 Ultra 512GB/12GB 5G Misty Lilac', 'CELUL
 INSERT INTO producto (SKU, nombre, categoria, productor, cantidad_en_stock, Precio) 
 VALUES ('43014', 'Smartphone Redmi 9C 32GB/2GB Gris Wom', 'CELULARES', 'Xiaomi', '18', '84990');
 
--- Evaluamos tabla
-SELECT * FROM producto;
+select * from cliente;
+select count(codigo) from cliente;
+-- B) Ingrese 5 clientes
+
+insert into cliente (codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, Total_Pagado)
+values ('0000026', 'Jorge Alberto', 'Zamora Roco', 56870906767, 'manpato 98', 'Quilpue','jorgeqhotmail.com', now(), 200.000),
+('0000027', 'Amada de Jesus', 'Rosales Rosales', 9567316405, 'san francisco 86', 'Quillota','amadaqhotmail.com', now(), 250.000),
+('0000028', 'Victor Hugo', 'Zapata Matus',95634543454, 'reyes martin 2345', 'Quilpue','vichu@hotmail.com', now(), 170.000 ),
+('0000029', 'Sonia Gla', 'Rosales Navarro', 95687785643, 'la conquista 3321', 'Petorca','glas@hotmail.com', now(), 230.000 ),
+('0000030', 'Guillermo felipe','Ayala Garcia',9562343243, 'Nos de mali  78','Lay-llay','guille@hotmail.com',now(), 380.000);
+
+-- MANIPULACION DE DATOS
+
+/* H) Cree una tabla que contenga solo los clientes que han pagado más que el promedio.
+select codigo, nombres, apellidos ,Total_Pagado from cliente
+where Total_Pagado > (select avg(Total_Pagado) from cliente) ;
+
+ K) Actualice los datos de 1 cliente.
+update cliente 
+set nombres = 'Magda', apellidos = 'Leal Montecino', telefono=56976545463, direccion ='los alerces 57', Total_Pagado = 355.000
+where codigo = '0000001';
+
+ M) Indique cuál es el cliente con mayor gasto.
+select codigo, nombres, MAX(Total_Pagado) from cliente;*/
+
+
+
+
+
