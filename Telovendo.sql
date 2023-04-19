@@ -9,7 +9,7 @@ CREATE TABLE cliente (
   codigo VARCHAR(20) NOT NULL UNIQUE,
   nombres VARCHAR(255) NOT NULL,
   apellidos VARCHAR(255) NOT NULL,
-  telefono BIGINT,
+  telefono VARCGAR (12),
   direccion VARCHAR(255),
   comuna VARCHAR(100),
   correo_electronico VARCHAR(255),
