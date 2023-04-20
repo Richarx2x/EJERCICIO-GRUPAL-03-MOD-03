@@ -9,7 +9,7 @@ CREATE TABLE cliente (
   codigo VARCHAR(20) NOT NULL UNIQUE,
   nombres VARCHAR(255) NOT NULL,
   apellidos VARCHAR(255) NOT NULL,
-  telefono BIGINT,
+  telefono VARCHAR(13),
   direccion VARCHAR(255),
   comuna VARCHAR(100),
   correo_electronico VARCHAR(255),
@@ -134,6 +134,56 @@ INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion)
 VALUES ('22345678-9', 'Juan', 'González Pérez', '1999-05-19', 'ventas')
 ;
 
+-- 10 NUEVOS VENDEDORES
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('23345678-0', 'Rodrigo', 'Pérez González', '1990-06-15', 'ventas', 510000)
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('18458209-6', 'Ignacio', 'Morales Veas', '1992-03-17', 'jefatura', 520000)
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('10876543-9', 'Luis', 'González Pérez', '1990-07-22', 'administracion', 530000)
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('1254567-2', 'Pedro', 'Pérez Pereira', '1998-02-15', 'ventas', 643000)
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('22745668-1', 'Karola', 'Ortiz Vergara', '1980-05-27', 'ventas', 750000)
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('8778432-6', 'Jackson', 'Pérez González', '1967-05-22', 'jefatura', 890000)
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('8954321-2', 'Francisca', 'González González', '1967-03-10', 'marketing', 650000)
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('19543989-4', 'Alvara', 'Flores Guerra', '1985-12-11', 'marketing', 760000)
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('1234598-9', 'Camilo', 'Plaza Plaza', '1970-09-10', 'ventas', 890334)
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('22545678-0', 'Ricardo', 'Plaza Pérez', '1998-05-12', 'ventas', 19540345)
+;
+
+-- 5 VENDEDORES NUEVOS
+
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('20145678-0', 'Rodrigo', 'Plaza Plaza', '1993-02-11', 'ventas', 540345)
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('12544278-0', 'Roberta', 'Roberts Rojas', '1998-05-12', 'ventas', 9540345)
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('22545378-0', 'Edina', 'Rojas Pérez', '2001-07-29', 'ventas', 10540345)
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('22545678-0', 'Eva', 'Plaza Pérez', '2004-05-12', 'ventas', 540345)
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('22545632-0', 'ENILDA', 'SOTOMAYOR RISOPATRON', '2002-11-13', 'ventas', 29540345)
+;
+
 -- TABLA CLIENTE INFO: 
 INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro)
 VALUES ( '0000001', 'Magdalena Pilar','Montecino Leal' , 4000400,'los campos 57','Casablanca',' magda@gmail.com',now());
@@ -214,3 +264,36 @@ VALUES ('43014', 'Smartphone Redmi 9C 32GB/2GB Gris Wom', 'CELULARES', 'Xiaomi',
 
 -- Evaluamos tabla
 SELECT * FROM producto;
+
+-- MANIPULACIÓN DE DATOS
+-- D. Identifique cual es el salario mínimo entre vendedores.
+SELECT RUN, MIN(SALARIO) SALARIO_MINIMO
+FROM VENDEDOR
+GROUP BY RUN
+ORDER BY SALARIO_MINIMO ASC;
+
+-- E. Identifique cual es el salario máximo entre vendedores.
+SELECT RUN, MAX(SALARIO) AS SALARIO_MAXIMO
+FROM VENDEDOR
+GROUP BY RUN
+ORDER BY SALARIO_MAXIMO DESC;
+
+-- F. Súmele el salario mínimo identificado al salario de todos los vendedores.
+SELECT VENDEDOR.RUN, SALARIO + SUBQUERY.SALARIO_MINIMO AS SALARIO_TOTAL_SUMANDO_EL_MINIMO
+FROM VENDEDOR
+JOIN (
+  SELECT RUN, MIN(SALARIO) AS SALARIO_MINIMO
+  FROM VENDEDOR
+  GROUP BY RUN
+) AS SUBQUERY ON VENDEDOR.RUN = SUBQUERY.RUN;
+
+-- J. Actualice los datos de tres vendedores.
+UPDATE VENDEDOR SET APELLIDOS = 'ROJAS VADE' WHERE RUN = '22545378-9';
+UPDATE VENDEDOR SET APELLIDOS = 'PIÑERA ECHEÑIQUE' WHERE RUN = '22545678-0';
+UPDATE VENDEDOR SET APELLIDOS = 'AVELLO SUAZO' WHERE RUN = '22545632-0';
+
+-- L. Seleccione el nombre y el apellido de los vendedores que tienen un salario superior al promedio.
+SELECT NOMBRE, APELLIDOS, SALARIO
+FROM VENDEDOR
+WHERE SALARIO > (SELECT AVG(SALARIO) FROM VENDEDOR);
+
