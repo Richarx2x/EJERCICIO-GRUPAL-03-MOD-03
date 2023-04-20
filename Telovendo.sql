@@ -133,6 +133,55 @@ VALUES ('1234567-9', 'Camila', 'Vergara Plaza', '1977-09-10', 'ventas')
 INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
 VALUES ('22345678-9', 'Juan', 'González Pérez', '1999-05-19', 'ventas')
 ;
+-- 10 venedores mas
+
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
+VALUES ('13345678-9', 'Ernesto', 'Pérez González', '1992-03-15', 'ventas')
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
+VALUES ('14458206-6', 'Maikel', 'Veas Veas', '1992-12-12', 'jefatura')
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
+VALUES ('15676543-9', 'Roberto', 'González Pérez', '1987-07-22', 'administracion')
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
+VALUES ('11234567-2', 'Peter', 'Jerez Pereira', '1994-02-15', 'ventas')
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
+VALUES ('16345678-1', 'Enrique', 'Vergara Vergara', '1989-05-27', 'ventas')
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
+VALUES ('17065432-1', 'Steven', 'Spilberg González', '1969-05-22', 'jefatura')
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
+VALUES ('18654321-9', 'Tatiana', 'Pérez Pérez', '1978-02-10', 'marketing')
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
+VALUES ('19543789-0', 'Rulo', 'Guerra Guerra', '1983-12-11', 'marketing')
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
+VALUES ('20234567-9', 'Camilo', 'Vergara Plaza', '1973-09-10', 'ventas')
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
+VALUES ('21435678-9', 'Juana', 'González Pérez', '1978-05-19', 'ventas')
+;
+
+-- 5 vendedores mas
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
+VALUES ('22367678-0', 'Ricardo', 'Molina Molina', '1990-10-23', 'ventas')
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
+VALUES ('23498206-0', 'David', 'Beckham Rodriguez', '1990-02-17', 'jefatura')
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
+VALUES ('19845543-0', 'WisinYandel', 'González Pérez', '1995-05-22', 'administracion')
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
+VALUES ('11098567-0', 'Eustakio', 'Londra Rauli', '1992-03-15', 'ventas')
+;
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
+VALUES ('22746678-0', 'Carola', 'Altamirano Vergara', '1993-05-27', 'ventas')
+;
 
 -- TABLA CLIENTE INFO: 
 INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro)
@@ -254,7 +303,7 @@ VALUES ('P-019', 'Auriculares con Cable Audio-Technica ATH-AD700X', 'Auriculares
 INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
 VALUES ('P-020', 'Auriculares con Cable Sennheiser HD 600', 'Auriculares', 'Sennheiser', 18);
 
- E) CREACION DE NUEVOS CLIENTES 
+-- E) CREACION DE NUEVOS CLIENTES 
 INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, Total_Pagado)
 VALUES ( '0000011', 'Claudia Pia','Lopex Lopex' , 56987454563,'las canarias 57','Petorca',' pipia@gmail.com', now(), 300.000);
 INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro,Total_Pagado)
@@ -309,9 +358,27 @@ VALUES 	('39568', 'Silla Gamer Wanku V2 Black/Red', 'Sillas Gamer', 'Gear Gamer'
 
 
 /* MANIPULACION DE DATOS
-D)
-E)
-F)
+D. Identifique cual es el salario mínimo entre vendedores.
+SELECT RUN, MIN(SALARIO) SALARIO_MINIMO
+FROM VENDEDOR
+GROUP BY RUN
+ORDER BY SALARIO_MINIMO ASC;
+
+E. Identifique cual es el salario máximo entre vendedores.
+SELECT RUN, MAX(SALARIO) SALARIO_MAXIMO
+FROM VENDEDOR
+GROUP BY RUN
+ORDER BY SALARIO_MAXIMO ASC;
+
+F. Súmele el salario mínimo identificado al salario de todos los vendedores.
+SELECT RUN, SALARIO + SUBQUERY.SALARIO_MINIMO AS SALARIO_TOTAL
+FROM VENDEDOR
+JOIN (
+  SELECT RUN, MIN(SALARIO) AS SALARIO_MINIMO
+  FROM VENDEDOR
+  GROUP BY RUN
+) AS SUBQUERY ON VENDEDOR.RUN = SUBQUERY.RUN;
+
 G)
  H) Cree una tabla que contenga solo los clientes que han pagado más que el promedio.
 select codigo, nombres, apellidos ,Total_Pagado from cliente
@@ -336,14 +403,20 @@ SET nombre =
     END
 WHERE SKU IN ('14853', '20906', '21504');
 
-J)
+J. Actualice los datos de tres vendedores.
+UPDATE VENDEDOR SET NOMBRE = 'Ramazzoti' WHERE RUN = '19845543-0';
+UPDATE VENDEDOR SET APELLIDOS = 'Ali Balenciaga' WHERE RUN = '11098567-0';
+UPDATE VENDEDOR SET NOMBRE = 'Brayatan' WHERE RUN = '22746678-0';
 
  K) Actualice los datos de 1 cliente.
 update cliente 
 set nombres = 'Magda', apellidos = 'Leal Montecino', telefono=56976545463, direccion ='los alerces 57', Total_Pagado = 355.000
 where codigo = '0000001';
 
-L)
+L. Seleccione el nombre y el apellido de los vendedores que tienen un salario superior al promedio.
+SELECT NOMBRE, APELLIDOS
+FROM VENDEDOR
+WHERE SALARIO > (SELECT AVG(SALARIO) FROM VENDEDOR);
 
  M) Indique cuál es el cliente con mayor gasto.
 select codigo, nombres, MAX(Total_Pagado) from cliente;
