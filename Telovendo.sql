@@ -134,53 +134,52 @@ INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion)
 VALUES ('22345678-9', 'Juan', 'González Pérez', '1999-05-19', 'ventas')
 ;
 -- 10 venedores mas
-
-INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
-VALUES ('13345678-9', 'Ernesto', 'Pérez González', '1992-03-15', 'ventas')
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('23345678-0', 'Rodrigo', 'Pérez González', '1990-06-15', 'ventas', 510000)
 ;
-INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
-VALUES ('14458206-6', 'Maikel', 'Veas Veas', '1992-12-12', 'jefatura')
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('18458209-6', 'Ignacio', 'Morales Veas', '1992-03-17', 'jefatura', 520000)
 ;
-INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
-VALUES ('15676543-9', 'Roberto', 'González Pérez', '1987-07-22', 'administracion')
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('10876543-9', 'Luis', 'González Pérez', '1990-07-22', 'administracion', 530000)
 ;
-INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
-VALUES ('11234567-2', 'Peter', 'Jerez Pereira', '1994-02-15', 'ventas')
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('1254567-2', 'Pedro', 'Pérez Pereira', '1998-02-15', 'ventas', 643000)
 ;
-INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
-VALUES ('16345678-1', 'Enrique', 'Vergara Vergara', '1989-05-27', 'ventas')
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('22745668-1', 'Karola', 'Ortiz Vergara', '1980-05-27', 'ventas', 750000)
 ;
-INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
-VALUES ('17065432-1', 'Steven', 'Spilberg González', '1969-05-22', 'jefatura')
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('8778432-6', 'Jackson', 'Pérez González', '1967-05-22', 'jefatura', 890000)
 ;
-INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
-VALUES ('18654321-9', 'Tatiana', 'Pérez Pérez', '1978-02-10', 'marketing')
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('8954321-2', 'Francisca', 'González González', '1967-03-10', 'marketing', 650000)
 ;
-INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
-VALUES ('19543789-0', 'Rulo', 'Guerra Guerra', '1983-12-11', 'marketing')
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('19543989-4', 'Alvara', 'Flores Guerra', '1985-12-11', 'marketing', 760000)
 ;
-INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
-VALUES ('20234567-9', 'Camilo', 'Vergara Plaza', '1973-09-10', 'ventas')
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('1234598-9', 'Camilo', 'Plaza Plaza', '1970-09-10', 'ventas', 890334)
 ;
-INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
-VALUES ('21435678-9', 'Juana', 'González Pérez', '1978-05-19', 'ventas')
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('22545678-0', 'Ricardo', 'Plaza Pérez', '1998-05-12', 'ventas', 19540345)
 ;
 
 -- 5 vendedores mas
-INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
-VALUES ('22367678-0', 'Ricardo', 'Molina Molina', '1990-10-23', 'ventas')
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('22367678-0', 'Ricardo', 'Molina Molina', '1990-10-23', 'ventas', 510000)
 ;
-INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
-VALUES ('23498206-0', 'David', 'Beckham Rodriguez', '1990-02-17', 'jefatura')
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('23498206-0', 'David', 'Beckham Rodriguez', '1990-02-17', 'jefatura', 520000)
 ;
-INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
-VALUES ('19845543-0', 'WisinYandel', 'González Pérez', '1995-05-22', 'administracion')
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('19845543-0', 'WisinYandel', 'González Pérez', '1995-05-22', 'administracion', 5130000)
 ;
-INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
-VALUES ('11098567-0', 'Eustakio', 'Londra Rauli', '1992-03-15', 'ventas')
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('11098567-0', 'Eustakio', 'Londra Rauli', '1992-03-15', 'ventas', 530000)
 ;
-INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion) 
-VALUES ('22746678-0', 'Carola', 'Altamirano Vergara', '1993-05-27', 'ventas')
+INSERT INTO Vendedor (run, nombre, apellidos, fecha_nacimiento, seccion, salario) 
+VALUES ('22746678-0', 'Carola', 'Altamirano Vergara', '1993-05-27', 'ventas', 5140000)
 ;
 
 -- TABLA CLIENTE INFO: 
