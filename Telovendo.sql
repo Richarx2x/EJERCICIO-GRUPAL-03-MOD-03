@@ -212,27 +212,6 @@ VALUES ('47921', 'Smartphone Galaxy S23 Ultra 512GB/12GB 5G Misty Lilac', 'CELUL
 INSERT INTO producto (SKU, nombre, categoria, productor, cantidad_en_stock, Precio) 
 VALUES ('43014', 'Smartphone Redmi 9C 32GB/2GB Gris Wom', 'CELULARES', 'Xiaomi', '18', '84990');
 
-
--- EJERCICIO GRUPAL 03 - MODULO 03
-
--- A) 5 VENDORES NUEVOS MAURICIO
-
--- B) 5 CLIENTES NUEVOS ARACILY
-
-insert into cliente (codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, Total_Pagado)
-values ('0000026', 'Jorge Alberto', 'Zamora Roco', 56870906767, 'manpato 98', 'Quilpue','jorgeqhotmail.com', now(), 200.000),
-('0000027', 'Amada de Jesus', 'Rosales Rosales', 9567316405, 'san francisco 86', 'Quillota','amadaqhotmail.com', now(), 250.000),
-('0000028', 'Victor Hugo', 'Zapata Matus',95634543454, 'reyes martin 2345', 'Quilpue','vichu@hotmail.com', now(), 170.000 ),
-('0000029', 'Sonia Gla', 'Rosales Navarro', 95687785643, 'la conquista 3321', 'Petorca','glas@hotmail.com', now(), 230.000 ),
-('0000030', 'Guillermo felipe','Ayala Garcia',9562343243, 'Nos de mali  78','Lay-llay','guille@hotmail.com',now(), 380.000);
--- C) 5 PRODUCTOS NUEVOS RICARDO 
-INSERT INTO producto (SKU, nombre, categoria, productor, cantidad_en_stock, Precio) 
-VALUES 	('39568', 'Silla Gamer Wanku V2 Black/Red', 'Sillas Gamer', 'Gear Gamer', '25', '79990'),
-		('39567', 'Silla Gamer Omilen V2 Black/Blue', 'Sillas Gamer', 'Gear Gamer', '10', '116990'),
-		('39574', 'Silla Gamer Beigman V2 Black/Orange', 'Sillas Gamer', 'Gear Gamer', '5', '142990'),
-		('37644', 'Silla Gamer ROG Chariot Core', 'Sillas Gamer', 'Asus', '12', '345990'),
-		('37645', 'Silla Gamer ROG Chariot (RGB)', 'Sillas Gamer', 'Asus', '4', '404990');
-        
 -- Productos nuevos (pendientes del ejercicio 02) Alvaro:
 INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
 VALUES ('P-001', 'Auriculares Inalámbricos Sony WH-1000XM4', 'Auriculares', 'Sony', 50);
@@ -274,6 +253,60 @@ INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock)
 VALUES ('P-019', 'Auriculares con Cable Audio-Technica ATH-AD700X', 'Auriculares', 'Audio-Technica', 12);
 INSERT INTO Producto (SKU, nombre, categoria, productor, cantidad_en_stock) 
 VALUES ('P-020', 'Auriculares con Cable Sennheiser HD 600', 'Auriculares', 'Sennheiser', 18);
+
+ E) CREACION DE NUEVOS CLIENTES 
+INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, Total_Pagado)
+VALUES ( '0000011', 'Claudia Pia','Lopex Lopex' , 56987454563,'las canarias 57','Petorca',' pipia@gmail.com', now(), 300.000);
+INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro,Total_Pagado)
+VALUES ( '0000012', 'Nelson Leonr','Lillo Portillo' , 56970809090,'la granja 107','Zapallar',' lillo@gmail.com',now(), 450.000);
+INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro,Total_Pagado)
+VALUES ( '0000013', 'Paulina Mariel','Sierra Sierra' , 5697080708,'huerfanos 3160','Quillota',' sierras@gmail.com',now(), 340.900);
+INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, total_pagado)
+VALUES ( '0000014','Ricardo Miguel' ,'Canelo Canelo', 56983121234,'la cascada 324','Quilpue',' canelox@gmail.com',now(),500.000);
+INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, total_pagado)
+VALUES ( '0000015', 'Luis Ariel','Zaes Zaes' , 56987887654,'avenida la luz 01','Petorca',' zaesza@gmail.com',now(), 320.900);
+INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, total_pagado)
+VALUES ( '0000016', ' Ariel','Sanchez Lira' , 5698788760,'las rosas 230','Llay-llay',' Liraa@gmail.com',now(), 150.900);
+INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, total_pagado)
+VALUES ( '0000017', 'Luisa Andrea','lopez Roa' , 56987887740,'las docas 43','Olmue',' roaaxa@gmail.com',now(), 80.900);
+INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, total_pagado)
+VALUES ( '0000018', 'Martina ','Navarro Zarate' , 56987884355,'matlazincas 786','Olmue',' zamartinaa@gmail.com',now(), 320.900);
+INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, total_pagado)
+VALUES ( '0000019', 'Hugo Antonio','Romero Morales' , 56987543454,'bromelias 43','Llay-llay',' huguito@gmail.com',now(), 20.900);
+INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, total_pagado)
+VALUES ( '0000020', 'Federico ','Hidalgo Zapata' , 5698774254,'montañas del sur 6743','Catemu',' fedex@gmail.com',now(), 87.900);
+INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, total_pagado)
+VALUES ( '0000021', 'Manuela ','Casanova Casanova' , 56976545432,'monito del monte 0943','Catemu',' novacasa@gmail.com',now(), 23.000);
+INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, total_pagado)
+VALUES ( '0000022', 'Lucía ','Canelo Bahamontes' , 56976764536,'achupallas 200','Catemu', 'luciaB@gmail.com',now(), 10.000);
+INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, total_pagado)
+VALUES ( '0000023', 'Sofía Antonia ','Careiro Cea' , 56977654343,'las ciela 544','Llay-llay', 'ceaCareiroB@gmail.com',now(), 110.000);
+INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, total_pagado)
+VALUES ( '0000024', 'Felipe Antonio ','Morales Canelo' , 56977694340,'las heras 4044','Olmue', 'moralesCaneloB@gmail.com',now(), 48.000);
+INSERT INTO cliente ( codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, total_pagado)
+VALUES ( '0000025', 'Samuel Reno ',' Canelo Morales' , 56910232341,'mermelada mora 432','Olmue', 'samuRenoB@gmail.com',now(), 98.900);
+
+-- EJERCICIO GRUPAL 03 - MODULO 03
+
+-- A) 5 VENDORES NUEVOS MAURICIO
+
+-- B) 5 CLIENTES NUEVOS ARACILY
+
+insert into cliente (codigo, nombres, apellidos, telefono, direccion, comuna, correo_electronico, fecha_registro, Total_Pagado)
+values ('0000026', 'Jorge Alberto', 'Zamora Roco', 56870906767, 'manpato 98', 'Quilpue','jorgeqhotmail.com', now(), 200.000),
+('0000027', 'Amada de Jesus', 'Rosales Rosales', 9567316405, 'san francisco 86', 'Quillota','amadaqhotmail.com', now(), 250.000),
+('0000028', 'Victor Hugo', 'Zapata Matus',95634543454, 'reyes martin 2345', 'Quilpue','vichu@hotmail.com', now(), 170.000 ),
+('0000029', 'Sonia Gla', 'Rosales Navarro', 95687785643, 'la conquista 3321', 'Petorca','glas@hotmail.com', now(), 230.000 ),
+('0000030', 'Guillermo felipe','Ayala Garcia',9562343243, 'Nos de mali  78','Lay-llay','guille@hotmail.com',now(), 380.000);
+-- C) 5 PRODUCTOS NUEVOS RICARDO 
+INSERT INTO producto (SKU, nombre, categoria, productor, cantidad_en_stock, Precio) 
+VALUES 	('39568', 'Silla Gamer Wanku V2 Black/Red', 'Sillas Gamer', 'Gear Gamer', '25', '79990'),
+		('39567', 'Silla Gamer Omilen V2 Black/Blue', 'Sillas Gamer', 'Gear Gamer', '10', '116990'),
+		('39574', 'Silla Gamer Beigman V2 Black/Orange', 'Sillas Gamer', 'Gear Gamer', '5', '142990'),
+		('37644', 'Silla Gamer ROG Chariot Core', 'Sillas Gamer', 'Asus', '12', '345990'),
+		('37645', 'Silla Gamer ROG Chariot (RGB)', 'Sillas Gamer', 'Asus', '4', '404990');
+        
+
 
 /* MANIPULACION DE DATOS
 D)
