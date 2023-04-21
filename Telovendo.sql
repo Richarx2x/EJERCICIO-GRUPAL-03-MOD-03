@@ -379,7 +379,11 @@ JOIN (
 ) AS SUBQUERY ON VENDEDOR.RUN = SUBQUERY.RUN;
 
 G)
- H) Cree una tabla que contenga solo los clientes que han pagado más que el promedio.
+UPDATE producto
+SET cantidad_en_stock = 0
+WHERE precio = (SELECT MAX(precio) FROM producto);
+
+H) Cree una tabla que contenga solo los clientes que han pagado más que el promedio.
 select codigo, nombres, apellidos ,Total_Pagado from cliente
 where Total_Pagado > (select avg(Total_Pagado) from cliente) ;
 
